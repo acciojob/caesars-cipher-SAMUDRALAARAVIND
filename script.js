@@ -31,16 +31,19 @@ const lookup = {
   ",": ",",
 };
 
-function rot13(encodedStr) {
-  let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-
-  return; //return decodedArr
+function rot13(str) {
+  let decodedArr = ""; 
+  for(let i = 0 ; i < str.length ; i++) {
+	  // str = "AK#C" => "NX#P"
+	  // lookup["#"]
+	  if(lookup[str[i]] == undefined){
+			decodedArr += str[i]
+	  }
+	  else decodedArr += lookup[str[i]]
+  }
+  return decodedArr ;
 }
 
-// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
+//  "n$%op" => "a$%bc"
 
-// console.log(rot13("SERR YBIR? NPPVBWBO"));
-
-// Do not change this line
 window.rot13 = rot13;
