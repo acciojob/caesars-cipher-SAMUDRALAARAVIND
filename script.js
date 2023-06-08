@@ -41,7 +41,7 @@ function rot13(str) {
 	  }
 	  else decodedArr.push(lookup[str[i]])
   }
-  return decodedArr ;
+  return decodedArr.join("") ;
 }
 
 //  "n$%op" => "a$%bc"
