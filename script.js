@@ -30,10 +30,17 @@ const lookup = {
   };
 
 function rot13(str) {
-	// str = "ARA" ;
+	// str = "Ara" ; // "Ara" => "ARA"
+	str = str.toUpperCase(); // "M*D"  => 
+	// "Z" + undefined + "Q" => ZundefinedQ
     let output = "" ; // "" + "N" => "N" 
 	for(let i = 0 ; i < str.length; i++){
-		output += lookup[str[i]]	 // str[0] => "A"
+		if(lookup[str[i]]){
+		 output += lookup[str[i]]	 // str[0] => "A"
+		}
+		else {
+			output += str[i]; 
+		}
 	}
 	return output;
 }
