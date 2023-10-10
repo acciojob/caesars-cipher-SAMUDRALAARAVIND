@@ -28,23 +28,14 @@ const lookup = {
     "?": "?",
     ",": ",",
   };
-  
-let A = "A".charCodeAt(0); /// 65
-let Z = "Z".charCodeAt(0); // 90
+
 function rot13(str) {
-    let ans = "" ; // "" => "$N#A"
-    // str = "$A#N" => "$N#A"
-    for(let i = 0; i < str.length; i++){
-        // i = 0
-        let currentChar = str[i].charCodeAt(0);
-        if(currentChar <= Z && currentChar >= A){
-            ans += lookup[str[i]]
-        }
-        else {
-            ans += str[i] ;
-        }
-    }
-    return ans ;
+	// str = "ARA" ;
+    let output = "" ; // "" + "N" => "N" 
+	for(let i = 0 ; i < str.length; i++){
+		output += lookup[str[i]]	 // str[0] => "A"
+	}
+	return output;
 }
   
   window.rot13 = rot13;
